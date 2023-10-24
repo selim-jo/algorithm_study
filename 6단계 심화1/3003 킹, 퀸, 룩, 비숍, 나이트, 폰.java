@@ -3,7 +3,8 @@ import java.util.*;
 public class Main {
    public static void main(String args[]) {
        Scanner sc = new Scanner(System.in);
-
+       
+       // 각 체스에 대한 값 설정
        int king = 1;
        int queen = 1;
        int rook = 2;
