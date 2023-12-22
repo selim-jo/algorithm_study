@@ -18,7 +18,7 @@ public class Main {
             arr[i] = sc.nextInt();
        }
 
-       // 배열 오름차순으로 정렬
+       // 배열 내림차순으로 정렬
        Arrays.sort(arr, Collections.reverseOrder());
        
        // 출력값
