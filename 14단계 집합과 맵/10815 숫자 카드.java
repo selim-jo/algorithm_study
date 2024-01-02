@@ -14,7 +14,6 @@
 
 // Scanner를 사용했을 때 시간초과가 나옴. 다른 방법 생각해보기
 // BufferReader와 StringTokenizer 이용
-// But, 시간초과가 나옴
 
 import java.util.*;
 import java.io.*;
