@@ -13,27 +13,33 @@
 // 3) null을 값으로 허용함
 
 // Scanner를 사용했을 때 시간초과가 나옴. 다른 방법 생각해보기
+// BufferReader와 StringTokenizer 이용
 
 import java.util.*;
 
 public class Main {
    public static void main(String args[]) {
 
-       Scanner sc = new Scanner(System.in);
+       //Scanner sc = new Scanner(System.in);
+       BufferReader br = new BufferReader(new InputStreamReader(System.in));
 
        // 입력값
-       int n = sc.nextInt();
+       //int n = sc.nextInt();
+       int n = Integer.parseInt(br.readLine());
        HashSet<Integer> hashSet = new HashSet<Integer>();
+       StringTokenizer st = new StringTokenizer(br.readLine());
 
        for(int i=0; i<n; i++) {
             // hashSet add 메소드 이용해 값 넣어주기
-            hashSet.add(sc.nextInt());
+            //hashSet.add(sc.nextInt());
+            hashSet.add(Integer.parseInt(st.nextToken()));
        }
 
-       int m = sc.nextInt();
+       //int m = sc.nextInt();
+       int m = Integer.parseInt(br.readLine());
        for(int i=0; i<m; i++) {
             // hashSet contains 메소드 이용해 값 비교하기
-            if(hashSet.contains(sc.nextInt())) {
+            if(hashSet.contains(Integer.parseInt(st.nextToken())) {
                 // 값이 있으면 1 출력
                 System.out.print(1);
             } else {
@@ -42,6 +48,6 @@ public class Main {
             }
             System.out.print(" ");
        }
-        sc.close();
+        br.close();
    }
 } 
