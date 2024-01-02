@@ -14,40 +14,47 @@
 
 // Scanner를 사용했을 때 시간초과가 나옴. 다른 방법 생각해보기
 // BufferReader와 StringTokenizer 이용
+// But, 시간초과가 나옴
 
 import java.util.*;
+import java.io.*;
 
 public class Main {
    public static void main(String args[]) {
+       try {
+            //Scanner sc = new Scanner(System.in);
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-       //Scanner sc = new Scanner(System.in);
-       BufferReader br = new BufferReader(new InputStreamReader(System.in));
+            // 입력값
+            //int n = sc.nextInt();
+            int n = Integer.parseInt(br.readLine());
+            HashSet<Integer> hashSet = new HashSet<Integer>();
+            StringTokenizer st1 = new StringTokenizer(br.readLine());
 
-       // 입력값
-       //int n = sc.nextInt();
-       int n = Integer.parseInt(br.readLine());
-       HashSet<Integer> hashSet = new HashSet<Integer>();
-       StringTokenizer st = new StringTokenizer(br.readLine());
-
-       for(int i=0; i<n; i++) {
-            // hashSet add 메소드 이용해 값 넣어주기
-            //hashSet.add(sc.nextInt());
-            hashSet.add(Integer.parseInt(st.nextToken()));
-       }
-
-       //int m = sc.nextInt();
-       int m = Integer.parseInt(br.readLine());
-       for(int i=0; i<m; i++) {
-            // hashSet contains 메소드 이용해 값 비교하기
-            if(hashSet.contains(Integer.parseInt(st.nextToken())) {
-                // 값이 있으면 1 출력
-                System.out.print(1);
-            } else {
-                // 값이 없으면 0 출력
-                System.out.print(0);
+            for(int i=0; i<n; i++) {
+                    // hashSet add 메소드 이용해 값 넣어주기
+                    //hashSet.add(sc.nextInt());
+                    hashSet.add(Integer.parseInt(st1.nextToken()));
             }
-            System.out.print(" ");
-       }
-        br.close();
+
+            //int m = sc.nextInt();
+            int m = Integer.parseInt(br.readLine());
+            StringTokenizer st2 = new StringTokenizer(br.readLine());
+            for(int i=0; i<m; i++) {
+                    // hashSet contains 메소드 이용해 값 비교하기
+                    if(hashSet.contains(Integer.parseInt(st2.nextToken()))) {
+                        // 값이 있으면 1 출력
+                        System.out.print(1);
+                    } else {
+                        // 값이 없으면 0 출력
+                        System.out.print(0);
+                    }
+                    System.out.print(" ");
+            }
+                br.close();
+        // 예외처리를 해주지 않으면 컴파일 에러 남
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
    }
 } 
