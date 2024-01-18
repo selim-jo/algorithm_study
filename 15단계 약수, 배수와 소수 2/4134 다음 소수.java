@@ -29,24 +29,24 @@ public class Main {
         }
         System.out.println(sb.toString());
         br.close();
-	}
 	
-    // 소수 판별 알고리즘
-    // (2부터 판별하는 수 전까지 나눠보고 나머지가 0이 안나오면 소수로 정의)
-    public static boolean isPrime(long num) {
-        if(num == 0 || num == 1) return false;
+        // 소수 판별 알고리즘
+        // (2부터 판별하는 수 전까지 나눠보고 나머지가 0이 안나오면 소수로 정의)
+        public static boolean isPrime(long num) {
+            if(num == 0 || num == 1) return false;
 
-        for(int i=2; i<=Math.sqrt(num); i++) {
-            if(num % i == 0) return false;
+            for(int i=2; i<=Math.sqrt(num); i++) {
+                if(num % i == 0) return false;
+            }
+            return true;
         }
-        return true;
-    }
 
-    public static long getNextPrimeNum(long num) {
-        num++;
-        while(!isPrime(num)) {
+        public static long getNextPrimeNum(long num) {
             num++;
+            while(!isPrime(num)) {
+                num++;
+            }
+            return num;
         }
-        return num;
     }
 }
